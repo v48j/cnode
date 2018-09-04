@@ -31,7 +31,7 @@ class Top extends Component {
     return (
       <Div>
         <Divt>
-          <Link to="/">
+          <Link to="/cnode/">
             <Img
               src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg"
               alt=""
@@ -44,7 +44,7 @@ class Top extends Component {
             </Link>
           </div>
           <Div3 style={user ? null : { display: "none" }}>
-            <Link to="/create/0">
+            <Link to="/cnode/create">
               <button>发布话题</button>
             </Link>
             <span style={{ color: "#ccc", fontSize: "14px" }}>
@@ -52,7 +52,7 @@ class Top extends Component {
               {user.loginname}
             </span>
             <Img2 src={user.avatar_url} alt="" />
-            <Link to="/" onClick={this.signOut}>
+            <Link to="/cnode/" onClick={this.signOut}>
               <Span>退出</Span>
             </Link>
           </Div3>

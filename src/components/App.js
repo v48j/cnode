@@ -17,9 +17,10 @@ class App extends Component {
         <div>
           <TopContainer />
           <Div>
-            <Route path="/" exact component={HomeContainer} />
-            <Route path="/topic/:id" component={TopicContainer} />
-            <Route path="/create/:id" component={CreateContainer} />
+            <Route path="/cnode/" exact component={HomeContainer} />
+            <Route path="/cnode/topic/:id" component={TopicContainer} />
+            <Route path="/cnode/create/:id" component={CreateContainer} />
+            <Route path="/cnode/create" component={CreateContainer} />
           </Div>
         </div>
       </Router>
