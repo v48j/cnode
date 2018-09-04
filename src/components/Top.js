@@ -39,7 +39,7 @@ class Top extends Component {
           </Link>
           <div style={user ? { display: "none" } : null}>
             <input type="text" value={token} onChange={this.changeToken} />
-            <Link to="/" onClick={this.signIn}>
+            <Link to="/cnode/" onClick={this.signIn}>
               <Span>登录</Span>
             </Link>
           </div>
