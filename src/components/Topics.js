@@ -121,7 +121,7 @@ const Li = styled.li`
 const Ul = styled.ul`
   list-style: none;
   padding: 0;
-  margin-bottom: 0;
+  margin: 0;
 `
 const Img = styled.img`
   width: 30px;

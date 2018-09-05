@@ -11,7 +11,7 @@ class Nav extends Component {
   render() {
     const { nowtab } = this.props
     return (
-      <div>
+      <div style={{ backgroundColor: "#f6f6f6" }}>
         <Ul>
           <Li
             onClick={() => {
@@ -126,4 +126,6 @@ const Ul = styled.ul`
   display: flex;
   list-style: none;
   align-items: center;
+  margin-bottom: 0;
+  height: 40px;
 `

@@ -5,7 +5,8 @@ import { getTopics, changeTab } from "../actions/index"
 const HomeContainer = props => <Home {...props} />
 const mapStateToProps = state => ({
   topics: state.topics,
-  nowtab: state.tab
+  nowtab: state.tab,
+  login: state.login
 })
 export default connect(
   mapStateToProps,
