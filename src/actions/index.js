@@ -14,8 +14,11 @@ import {
   COLLECT
 } from "../constants/actionTypes"
 import { URI } from "../constants/url"
-export const getTopics = tab => dispatch => {
-  const uri = tab ? `${URI}/topics/?tab=${tab}` : `${URI}/topics`
+export const getTopics = (tab, page) => dispatch => {
+  //const uri = tab ? `${URI}/topics/?tab=${tab}&page=${page}` : `${URI}/topics`
+  const tab1 = tab ? tab : "all"
+  const page1 = page ? page : 1
+  const uri = `${URI}/topics/?tab=${tab1}&page=${page1}`
   axios
     .get(uri)
     .then(res => {

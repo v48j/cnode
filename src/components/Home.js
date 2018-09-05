@@ -5,13 +5,12 @@ import styled from "styled-components"
 
 class Home extends Component {
   render() {
-    
-
     const { topics, getTopics, changeTab, nowtab } = this.props
+
     return (
       <Div>
         <Nav getTopics={getTopics} changeTab={changeTab} nowtab={nowtab} />
-        <Topics topics={topics} />
+        <Topics topics={topics} getTopics={getTopics} nowtab={nowtab} />
       </Div>
     )
   }

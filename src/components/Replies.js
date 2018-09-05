@@ -4,20 +4,23 @@ import "../iconfont/iconfont.css"
 import "./aa.css"
 class Replies extends Component {
   clickLike = id => {
-    const { like, replies } = this.props
-    //产生一个新的评论数据
-    const newComment = replies.map(ele => {
-      if (ele.id === id) {
-        ele.is_uped = !ele.is_uped
-        if (ele.is_uped) {
-          ele.ups.length++
-        } else {
-          ele.ups.length--
+    if (sessionStorage.token) {
+      const { like, replies } = this.props
+      const newComment = replies.map(ele => {
+        if (ele.id === id) {
+          ele.is_uped = !ele.is_uped
+          if (ele.is_uped) {
+            ele.ups.length++
+          } else {
+            ele.ups.length--
+          }
         }
-      }
-      return ele
-    })
-    like(id, newComment)
+        return ele
+      })
+      like(id, newComment)
+    } else {
+      alert("请先登录，登陆后即可点赞")
+    }
   }
   render() {
     const { replies } = this.props
@@ -47,7 +50,11 @@ class Replies extends Component {
                 <span style={{ margin: "0 10px" }}>{ups.length}</span>
                 <I
                   onClick={this.like}
-                  style={{ cursor: "pointer" }}
+                  style={
+                    sessionStorage.token
+                      ? { cursor: "pointer" }
+                      : { display: "none" }
+                  }
                   className="iconfont icon-huifu"
                 />
               </div>
